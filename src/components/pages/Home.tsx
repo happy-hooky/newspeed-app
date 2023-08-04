@@ -1,11 +1,26 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View } from '../atoms/View';
+import { Text } from '../atoms/Text';
+import { Pressable } from '../atoms/Pressable';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
+    const navigation = useNavigation();
+
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Home</Text>
-        </View>
+            <View>
+                <Text type='title'>메인페이지</Text>
+                <Pressable 
+                    componentType='search' 
+                    onPress={() => navigation.navigate('Search')} >
+                    <Text>검색</Text>
+                </Pressable>
+                <Pressable 
+                    componentType='profile' 
+                    onPress={() => navigation.navigate('Profile')} >
+                    <Text>프로필</Text>
+                </Pressable>
+            </View>
     );
 }
 
