@@ -1,54 +1,44 @@
-import React from 'react';
-import styled from 'styled-components/native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { ViewStyle } from 'react-native';
+import styled, { css } from 'styled-components/native';
+import { color } from '@/constants';
 
-interface PressableProps {
-  children?: React.ReactNode;
-  onPress?: () => void;
-  componentType?: 'apple' | 'kakao' | 'search' | 'profile' | 'default';
-}
+const sizeType = {
+  basic: 24,
+  big: 52,
+};
 
-const StyledPressable = styled.Pressable`
-  padding: 10px;
-  border-radius: 5px;
+const designType = {
+  primary: css`
+    background-color: ${color.primary};
+    border-radius: 4px;
+  `,
+  primaryBorder: css`
+    border-width: 1px;
+    border-color: ${color.primary};
+    border-radius: 4px;
+  `,
+};
 
-  ${(props) => {
-    switch (props.componentType) {
-      case 'apple':
-        return 'background-color: #000;';
-      case 'kakao':
-        return 'background-color: #FFEB00;';
-      case 'search':
-      case 'profile':
-        return '';
-      default:
-        return '';
-    }
-  }}
+const Button = styled.Pressable<
+  ViewStyle & { size: keyof typeof sizeType; design: keyof typeof designType }
+>`
+  ${({ design }) => design && designType[`${design}`]}
+  ${({ size }) => size && `height: ${sizeType[`${size}`]};`}
+
+  ${({ width }) =>
+    width && (typeof width === 'number' ? `width: ${width};` : `width: ${width.toString()};`)}
+  ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor.toString()};`}
+  ${({ borderWidth }) => borderWidth && `border-width: ${borderWidth};`}
+  ${({ borderColor }) => borderColor && `border-color: ${borderColor.toString()};`}
+  ${({ margin }) => margin && `margin: ${margin.toString()};`}
+  ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom.toString()};`}
+  ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()};`}
+  ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft.toString()};`}
+  ${({ marginRight }) => marginRight && `margin-right: ${marginRight.toString()};`}
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const Pressable: React.FC<PressableProps> = ({
-  children,
-  onPress,
-  componentType = 'default',
-}) => {
-  const getIconName = () => {
-    switch (componentType) {
-      case 'search':
-        return 'ios-search';
-      case 'profile':
-        return 'ios-person';
-      default:
-        return null;
-    }
-  };
-
-  const iconName = getIconName();
-
-  return (
-    <StyledPressable componentType={componentType} onPress={onPress}>
-      {iconName && <Ionicons name={iconName} size={28} />}
-      {children}
-    </StyledPressable>
-  );
-};
+export default Button;

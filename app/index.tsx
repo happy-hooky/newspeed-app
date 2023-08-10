@@ -1,12 +1,21 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { Button, Text } from '@/components/atoms';
+import { color } from '@/constants';
 
-const LoginPage = () => {
+export default () => {
   return (
-    <View>
-      <Text>로그인 페이지 입니다.</Text>
-    </View>
+    <>
+      <Button size="basic" design="primary" width={64} marginBottom={24}>
+        <Text color={color.goldenGrow}>샘플</Text>
+      </Button>
+      <Button size="basic" design="primaryBorder" width={24} marginBottom={24}>
+        <Text>X</Text>
+      </Button>
+      <Button size="big" design="primary" width={64} marginBottom={24}>
+        <Text fontSize={18}>샘플3</Text>
+      </Button>
+      <Button size="big" design="primaryBorder" width={64}>
+        <Text>샘플4</Text>
+      </Button>
+    </>
   );
 };
-
-export default LoginPage;
