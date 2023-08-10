@@ -1,47 +1,41 @@
-import React, { useEffect } from 'react';
-import * as SplashScreen from 'expo-splash-screen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../src/components/pages/Login';
-import Home from '../src/components/pages/Home';
-import SignIn from '../src/components/pages/SignIn';
-import Search from '../src/components/pages/Search';
-import Profile from '../src/components/pages/Profile';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from 'expo-router';
+import { useEffect } from 'react';
 
-export type RootStackParamList = {
-  Login: undefined;
-  Home: undefined;
-  SignIn: undefined;
-  Search: undefined;
-  Profile: undefined;
-};
+SplashScreen.preventAutoHideAsync();
 
-const Stack = createStackNavigator<RootStackParamList>();
+export default function AppLayout() {
+  const [loaded, error] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    ...FontAwesome.font,
+  });
 
-const AppLayout = () => {
   useEffect(() => {
-    async function prepare() {
-      try {
-        await SplashScreen.preventAutoHideAsync();
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        await SplashScreen.hideAsync();
-      }
-    }
-    prepare();
-  }, []);
-  return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Login"  screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={Login}  />
-        <Stack.Screen name="SignIn" component={SignIn} />
-        <Stack.Screen name="Home" component={Home}  />
-        <Stack.Screen name="Search" component={Search}  />
-        <Stack.Screen name="Profile" component={Profile}  />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+    if (error) throw error;
+  }, [error]);
 
-export default AppLayout;
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
+  return <AppNavigator />;
+}
+
+function AppNavigator() {
+  return (
+    <Stack>
+      <Stack.Screen name="Login" />
+      <Stack.Screen name="SignIn" />
+      <Stack.Screen name="Home" />
+      <Stack.Screen name="Search" />
+      <Stack.Screen name="Profile" />
+    </Stack>
+  );
+}
