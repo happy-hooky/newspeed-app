@@ -8,7 +8,12 @@ interface TextInputProps {
   onChangeText?: (text: string) => void;
 }
 
-export const TextInput: React.FC<TextInputProps> = ({ value, style, placeholder, onChangeText }) => {
+export const TextInput: React.FC<TextInputProps> = ({
+  value,
+  style,
+  placeholder,
+  onChangeText,
+}) => {
   return (
     <StyledInput
       style={[styles.base, style]}

@@ -7,11 +7,7 @@ interface ViewProps {
 }
 
 export const View: React.FC<ViewProps> = ({ children, style }) => {
-  return (
-    <StyledView style={[styles.base, style]}>
-      {children}
-    </StyledView>
-  );
+  return <StyledView style={[styles.base, style]}>{children}</StyledView>;
 };
 
 const styles = StyleSheet.create({
