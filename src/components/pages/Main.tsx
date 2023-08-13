@@ -1,23 +1,21 @@
 import React from 'react';
-import { View } from '../atoms/View';
-import { Text } from '../atoms/Text';
-import { Pressable } from '../atoms/Button';
+import { Text, View, Button } from '../atoms/index';
 import { Link } from 'expo-router';
 
 const Main = () => {
   return (
-    <View>
-      <Text type="title">메인페이지</Text>
+    <View design="base">
+      <Text>메인페이지</Text>
       <Link href="/search">
-        <Pressable componentType="search">
+        <Button size="basic" design="primary">
           <Text>검색</Text>
-        </Pressable>
+        </Button>
       </Link>
 
       <Link href="/profile">
-        <Pressable componentType="profile">
+        <Button size="basic" design="primary">
           <Text>프로필</Text>
-        </Pressable>
+        </Button>
       </Link>
     </View>
   );

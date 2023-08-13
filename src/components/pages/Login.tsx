@@ -1,18 +1,18 @@
 import React from 'react';
 import { Text, View, Button } from '../atoms/index';
 import { Link } from 'expo-router';
+
 const LoginPage = () => {
   return (
-    <View style="container">
+    <View design="base">
       <Link href="/SignIn">
-        <Button componentType="apple">
-          <Text type="buttonText">Apple Login</Text>
+        <Button size="basic" design="primary">
+          <Text>Apple Login</Text>
         </Button>
       </Link>
-
       <Link href="/SignIn">
-        <Button componentType="kakao">
-          <Text type="buttonText">Kakao Login</Text>
+        <Button size="basic" design="primary">
+          <Text>Kakao Login</Text>
         </Button>
       </Link>
     </View>

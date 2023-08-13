@@ -1,24 +1,13 @@
-import React from 'react';
-import { View as StyledView, StyleSheet } from 'react-native';
+import { ViewStyle } from 'react-native';
+import styled, { css } from 'styled-components/native';
 
-interface ViewProps {
-  children?: React.ReactNode;
-  style?: Object;
-}
-
-export const View: React.FC<ViewProps> = ({ children, style }) => {
-  return <StyledView style={[styles.base, style]}>{children}</StyledView>;
+const designType = {
+  base: css`
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  `,
 };
+const View = styled.View<ViewStyle & { design: keyof typeof designType }>``;
 
-const styles = StyleSheet.create({
-  base: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default View;
