@@ -1,5 +1,6 @@
 import { Button, Text } from '@/components/atoms';
 import { color } from '@/constants';
+import { Link } from 'expo-router';
 
 export default () => {
   return (
@@ -11,11 +12,13 @@ export default () => {
         <Text>X</Text>
       </Button>
       <Button size="big" design="primary" width={64} marginBottom={24}>
-        <Text fontSize={18}>샘플3</Text>
+        <Text fontSize={10}>샘플</Text>
       </Button>
-      <Button size="big" design="primaryBorder" width={64}>
-        <Text>샘플4</Text>
-      </Button>
+      <Link href="../components/pages/Login" asChild>
+        <Button size="big" design="primaryBorder" width={64}>
+          <Text>샘플</Text>
+        </Button>
+      </Link>
     </>
   );
 };
