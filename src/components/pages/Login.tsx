@@ -1,26 +1,20 @@
 import React from 'react';
-import { Pressable } from '../atoms/Button';
-import { Text } from '../atoms/Text';
-import { View } from '../atoms/View';
-import { useNavigation } from '@react-navigation/native';
-
+import { Text, View, Button } from '../atoms/index';
+import { Link } from 'expo-router';
 const LoginPage = () => {
-  const navigation = useNavigation();
-
   return (
     <View style="container">
-      <Pressable
-        componentType="apple"
-        onPress={() => navigation.navigate('SignIn', { loginType: 'apple' })}
-      >
-        <Text type="buttonText">Apple Login</Text>
-      </Pressable>
-      <Pressable
-        componentType="kakao"
-        onPress={() => navigation.navigate('SignIn', { loginType: 'kakao' })}
-      >
-        <Text type="buttonText">Kakao Login</Text>
-      </Pressable>
+      <Link href="/SignIn">
+        <Button componentType="apple">
+          <Text type="buttonText">Apple Login</Text>
+        </Button>
+      </Link>
+
+      <Link href="/SignIn">
+        <Button componentType="kakao">
+          <Text type="buttonText">Kakao Login</Text>
+        </Button>
+      </Link>
     </View>
   );
 };
