@@ -23,15 +23,15 @@ const Button = styled.Pressable<
   ViewStyle & { size: keyof typeof sizeType; design: keyof typeof designType }
 >`
   ${({ design }) => design && designType[`${design}`]}
-  ${({ size }) => size && `height: ${sizeType[`${size}`]};`}
+  ${({ size }) => size && `height: ${sizeType[`${size}`]}px;`}
 
   ${({ width }) =>
-    width && (typeof width === 'number' ? `width: ${width};` : `width: ${width.toString()};`)}
+    width && (typeof width === 'number' ? `width: ${width}px;` : `width: ${width.toString()};`)}
   ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor.toString()};`}
   ${({ borderWidth }) => borderWidth && `border-width: ${borderWidth};`}
   ${({ borderColor }) => borderColor && `border-color: ${borderColor.toString()};`}
   ${({ margin }) => margin && `margin: ${margin.toString()};`}
-  ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom.toString()};`}
+  ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom.toString()}px;`}
   ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()};`}
   ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft.toString()};`}
   ${({ marginRight }) => marginRight && `margin-right: ${marginRight.toString()};`}
