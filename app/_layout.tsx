@@ -29,13 +29,5 @@ export default function AppLayout() {
 }
 
 function AppNavigator() {
-  return (
-    <Stack>
-      <Stack.Screen name="Login" />
-      <Stack.Screen name="SignIn" />
-      <Stack.Screen name="Home" />
-      <Stack.Screen name="Search" />
-      <Stack.Screen name="Profile" />
-    </Stack>
-  );
+  return <Stack />;
 }
