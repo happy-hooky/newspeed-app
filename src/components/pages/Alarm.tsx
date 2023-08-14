@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Text, View } from '../atoms/index';
 
-const SearchPage = () => {
+const AlarmPage = () => {
   return (
     <View design="base">
-      <Text>검색 페이지</Text>
+      <Text>알림설정</Text>
     </View>
   );
 };
 
-export default SearchPage;
+export default AlarmPage;
