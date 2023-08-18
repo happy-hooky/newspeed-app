@@ -3,6 +3,10 @@ import image from '../../../assets/image';
 
 const ImageSource = {
   back: image['back'],
+  search: image['search'],
+  user: image['user'],
+  logo: image['logo'],
+  youtube: image['youtube'],
 };
 
 interface ImageProps extends ImageStyle {

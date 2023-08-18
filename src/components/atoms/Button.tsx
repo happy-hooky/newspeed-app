@@ -20,7 +20,7 @@ const designType = {
 };
 
 const Button = styled.Pressable<
-  ViewStyle & { size: keyof typeof sizeType; design: keyof typeof designType }
+  ViewStyle & { size?: keyof typeof sizeType; design?: keyof typeof designType }
 >`
   ${({ design }) => design && designType[`${design}`]}
   ${({ size }) => size && `height: ${sizeType[`${size}`]}px;`}

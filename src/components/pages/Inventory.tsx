@@ -3,7 +3,7 @@ import { Text, View } from '../atoms/index';
 
 const InventoryPage = () => {
   return (
-    <View design="base">
+    <View>
       <Text>보관함</Text>
     </View>
   );

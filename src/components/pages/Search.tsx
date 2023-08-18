@@ -3,7 +3,7 @@ import { Text, View } from '../atoms/index';
 
 const SearchPage = () => {
   return (
-    <View design="base">
+    <View>
       <Text>검색 페이지</Text>
     </View>
   );

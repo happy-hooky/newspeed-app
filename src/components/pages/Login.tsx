@@ -3,7 +3,7 @@ import { Text, View, Button } from '../atoms/index';
 
 const LoginPage = () => {
   return (
-    <View design="base">
+    <View>
       <Button size="basic" design="primary">
         <Text>Apple Login</Text>
       </Button>

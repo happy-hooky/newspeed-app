@@ -4,7 +4,7 @@ import { Link } from 'expo-router';
 
 const ProfilePage = () => {
   return (
-    <View design="base">
+    <View>
       <Link href="/mypage/inventory" asChild>
         <Button design="primary" size="basic">
           <Text>보관함</Text>

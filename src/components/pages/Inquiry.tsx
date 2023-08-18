@@ -3,7 +3,7 @@ import { Text, View } from '../atoms/index';
 
 const InquiryPage = () => {
   return (
-    <View design="base">
+    <View>
       <Text>문의하기</Text>
     </View>
   );

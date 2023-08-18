@@ -5,6 +5,9 @@ const Text = styled.Text<TextStyle>`
   ${({ color }) => color && `color: ${color.toString()};`}
   ${({ fontSize }) => fontSize && `font-size: ${fontSize}px;`}
   ${({ fontFamily }) => fontFamily && `font-family: ${fontFamily};`}
+ ${({ marginVertical }) => marginVertical && `margin-vertical: ${marginVertical.toString()};`}
+  ${({ marginHorizontal }) =>
+    marginHorizontal && `margin-horizontal: ${marginHorizontal.toString()};`}
 `;
 
 export default Text;

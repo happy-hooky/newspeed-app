@@ -3,7 +3,7 @@ import { Text, View } from '../atoms/index';
 
 const AlarmPage = () => {
   return (
-    <View design="base">
+    <View>
       <Text>알림설정</Text>
     </View>
   );
