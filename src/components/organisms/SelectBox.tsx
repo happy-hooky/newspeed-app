@@ -4,17 +4,20 @@ import { useEffect, useRef, useState } from 'react';
 import { Pressable, View as _View } from 'react-native';
 
 export interface SelectBoxProps {
+  selectedValue: string;
   options: {
     value: string | number;
     element: React.ReactElement;
     selectedElement?: React.JSX.Element;
+    handleSelect: () => void;
   }[];
 }
 
-const SelectBox = ({ options }: SelectBoxProps) => {
+const SelectBox = ({ selectedValue, options }: SelectBoxProps) => {
+  const { onModal } = useModal();
+
   const boxRef = useRef<_View>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const { onModal, closeModal } = useModal();
   const [location, setLocation] = useState({
     top: 0,
     left: 0,
@@ -36,11 +39,8 @@ const SelectBox = ({ options }: SelectBoxProps) => {
           options: options,
           location,
           setIsOpen,
-          closeModal,
         },
       });
-    } else {
-      closeModal();
     }
   }, [isOpen]);
 
@@ -52,10 +52,16 @@ const SelectBox = ({ options }: SelectBoxProps) => {
           onLayout={getBoxMeasure}
           flexDirection="row"
           alignItems="flex-start"
-          gap={20}
+          justifyContent="space-between"
           height={24}
+          width={72}
+          gap={20}
         >
-          {options[0].selectedElement}
+          <View alignItems="center" flex={1}>
+            {selectedValue
+              ? options.filter((option) => option.value === selectedValue)[0].selectedElement
+              : options[0].selectedElement}
+          </View>
           <Image src="back" width={16} height={16} transform={[{ rotate: '270deg' }]} />
         </View>
       </Pressable>

@@ -2,13 +2,14 @@ import { View } from '@/components/atoms';
 import { ModalProps } from '@/components/modal';
 import { SelectBoxProps } from '@/components/organisms/SelectBox';
 import { color } from '@/constants';
+import { useModalValue } from '@/util/useModalValue';
 import { useRef, useState } from 'react';
 import { View as _View, FlatList, Pressable } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 
-const SelectBoxModal = ({ payload }: ModalProps) => {
-  const { options, closeModal, setIsOpen, location } = payload as SelectBoxProps & {
-    closeModal: () => void;
+const SelectBoxModal = ({ payload, hash }: ModalProps) => {
+  const { deleteModal } = useModalValue(hash);
+  const { options, setIsOpen, location } = payload as SelectBoxProps & {
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     location: {
       top: number;
@@ -17,6 +18,11 @@ const SelectBoxModal = ({ payload }: ModalProps) => {
   };
   const boxRef = useRef<_View>(null);
   const [width, setWidth] = useState(0);
+
+  const closeModal = () => {
+    deleteModal();
+    setIsOpen(false);
+  };
 
   return (
     <View
@@ -28,12 +34,7 @@ const SelectBoxModal = ({ payload }: ModalProps) => {
       width="100%"
       height="100%"
     >
-      <Pressable
-        onPress={() => {
-          closeModal();
-          setIsOpen(false);
-        }}
-      >
+      <Pressable onPress={closeModal}>
         <View width="100%" height="100%">
           <View
             ref={boxRef}
@@ -57,7 +58,21 @@ const SelectBoxModal = ({ payload }: ModalProps) => {
                 backgroundColor={color.white}
                 borderRadius={8}
               >
-                <FlatList data={options} renderItem={({ item }) => item.element} />
+                <FlatList
+                  data={options}
+                  renderItem={({ item }) => {
+                    return (
+                      <Pressable
+                        onPress={() => {
+                          item.handleSelect();
+                          closeModal();
+                        }}
+                      >
+                        {item.element}
+                      </Pressable>
+                    );
+                  }}
+                />
               </View>
             </Shadow>
           </View>
