@@ -5,5 +5,5 @@ export const color = {
   white: '#FFFFFF',
   cheese: '#FFB677',
   twilight: '#EFF0EB',
-  black: '000000',
+  black: '#000000',
 };

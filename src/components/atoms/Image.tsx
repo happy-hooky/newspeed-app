@@ -7,6 +7,7 @@ const ImageSource = {
   user: image['user'],
   logo: image['logo'],
   youtube: image['youtube'],
+  instagram: image['instagram'],
 };
 
 interface ImageProps extends ImageStyle {

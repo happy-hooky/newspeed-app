@@ -1,7 +1,7 @@
-import { ViewStyle } from 'react-native';
+import { View as _View, ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
 
-const View = styled.View<ViewStyle>`
+const View = styled(_View)<ViewStyle>`
   ${({ width }) =>
     width && (typeof width === 'number' ? `width: ${width}px;` : `width: ${width.toString()};`)}
   ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor.toString()};`}
@@ -26,13 +26,16 @@ const View = styled.View<ViewStyle>`
   ${({ paddingHorizontal }) =>
     paddingHorizontal && `padding-horizontal: ${paddingHorizontal.toString()};`}
   ${({ alignSelf }) => alignSelf && `align-self: ${alignSelf};`}
-  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius.toString()};`}
+  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius.toString()}px;`}
   ${({ borderBottomEndRadius }) =>
     borderBottomEndRadius && `border-bottom-end-radius: ${borderBottomEndRadius.toString()};`}
   ${({ borderBottomStartRadius }) =>
     borderBottomStartRadius && `border-bottom-start-radius: ${borderBottomStartRadius.toString()};`}
   ${({ shadowColor }) => shadowColor && `shadow-color: ${shadowColor.toString()};`}
-  ${({ shadowOpacity }) => shadowOpacity && `shadow-Opacity: ${shadowOpacity.toString()};`}
+  ${({ shadowOpacity }) => shadowOpacity && `shadow-opacity: ${shadowOpacity.toString()};`}
+  ${({ position }) => position && `position: ${position};`}
+  ${({ zIndex }) => zIndex && `z-index: ${zIndex};`}
+  ${({ opacity }) => typeof opacity === 'number' && `opacity: ${opacity};`}
 `;
 
 export default View;

@@ -1,8 +1,7 @@
-import { View } from '@/components/atoms';
-import Image from '@/components/atoms/Image';
+import { Button, View, Image } from '@/components/atoms';
 import { MainPage } from '@/components/pages';
 import { color } from '@/constants';
-import { Stack } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 
 export default () => {
   return (
@@ -17,8 +16,16 @@ export default () => {
           headerLeft: () => <Image src="logo" width={32} height={32} />,
           headerRight: () => (
             <View flexDirection="row">
-              <Image src="search" width={16} height={16} />
-              <Image src="user" width={16} height={16} marginLeft={16} />
+              <Link href="/search" asChild>
+                <Button>
+                  <Image src="search" width={16} height={16} />
+                </Button>
+              </Link>
+              <Link href="/mypage" asChild>
+                <Button>
+                  <Image src="user" width={16} height={16} marginLeft={16} />
+                </Button>
+              </Link>
             </View>
           ),
         }}

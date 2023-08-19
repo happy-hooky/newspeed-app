@@ -1,4 +1,4 @@
-import Image from '@/components/atoms/Image';
+import { Image } from '@/components/atoms';
 import { SearchPage } from '@/components/pages';
 import { Stack } from 'expo-router';
 
