@@ -1,11 +1,13 @@
-import * as React from 'react';
-import { Text, View } from '../atoms/index';
+import YoutubeCard from '@/components/organisms/YoutubeCardItem';
+import { ScrollView } from 'react-native';
 
 const InventoryPage = () => {
   return (
-    <View>
-      <Text>보관함</Text>
-    </View>
+    <ScrollView>
+      <YoutubeCard />
+      <YoutubeCard />
+      <YoutubeCard />
+    </ScrollView>
   );
 };
 
