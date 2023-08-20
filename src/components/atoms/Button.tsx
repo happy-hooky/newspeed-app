@@ -32,7 +32,7 @@ const Button = styled.Pressable<
   ${({ borderColor }) => borderColor && `border-color: ${borderColor.toString()};`}
   ${({ margin }) => margin && `margin: ${margin.toString()};`}
   ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom.toString()}px;`}
-  ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()};`}
+  ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()}px;`}
   ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft.toString()};`}
   ${({ marginRight }) => marginRight && `margin-right: ${marginRight.toString()};`}
 
