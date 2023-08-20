@@ -5,6 +5,7 @@ const image = {
   logo: require('./images/icon-logo.png'),
   youtube: require('./images/icon-youtube.png'),
   instagram: require('./images/icon-instagram.png'),
+  userMockImage: require('./images/icon-iu.png'),
 };
 
 export default image;

@@ -8,6 +8,7 @@ const ImageSource = {
   logo: image['logo'],
   youtube: image['youtube'],
   instagram: image['instagram'],
+  userMockImage: image['userMockImage'],
 };
 
 interface ImageProps extends ImageStyle {
