@@ -11,6 +11,7 @@ const ImageSource = {
   delete: image['delete'],
   star: image['star'],
   starFill: image['starFill'],
+  userMockImage: image['userMockImage'],
 };
 
 interface ImageProps extends ImageStyle {

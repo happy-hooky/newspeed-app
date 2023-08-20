@@ -8,6 +8,7 @@ const image = {
   delete: require('./images/icon-delete.png'),
   star: require('./images/icon-star.png'),
   starFill: require('./images/icon-star-fill.png'),
+  userMockImage: require('./images/icon-iu.png'),
 };
 
 export default image;
