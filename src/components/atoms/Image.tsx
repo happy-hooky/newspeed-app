@@ -8,6 +8,7 @@ const ImageSource = {
   logo: image['logo'],
   youtube: image['youtube'],
   instagram: image['instagram'],
+  delete: image['delete'],
 };
 
 interface ImageProps extends ImageStyle {

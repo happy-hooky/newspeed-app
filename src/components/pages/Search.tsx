@@ -1,11 +1,38 @@
 import * as React from 'react';
-import { Text, View } from '../atoms/index';
+import { Image, Text, View } from '@/components/atoms';
+import { color } from '@/constants';
+import { TextInput } from '@/components/molecules';
+import { getDefaultHeaderHeight } from '@react-navigation/elements';
+import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
+import { Pressable } from 'react-native';
+import { PopularSearchList, SearchHistoryList } from '@/components/organisms';
 
 const SearchPage = () => {
+  const frame = useSafeAreaFrame();
+  const insets = useSafeAreaInsets();
+
+  const headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
+
   return (
-    <View>
-      <Text>검색 페이지</Text>
-    </View>
+    <>
+      <View padding={20} backgroundColor={color.papaya}>
+        <View height={headerHeight} paddingTop={insets.top}>
+          <Pressable onPress={() => router.back()}>
+            <Image src="back" width={24} height={24} />
+          </Pressable>
+        </View>
+        <TextInput design="search" />
+        <View marginTop={28}>
+          <Text>검색 기록</Text>
+          <SearchHistoryList />
+        </View>
+      </View>
+      <View paddingTop={32} paddingHorizontal={20} overflow="hidden">
+        <Text>추천 검색어</Text>
+        <PopularSearchList />
+      </View>
+    </>
   );
 };
 

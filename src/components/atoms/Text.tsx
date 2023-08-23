@@ -8,6 +8,8 @@ const Text = styled.Text<TextStyle>`
  ${({ marginVertical }) => marginVertical && `margin-vertical: ${marginVertical.toString()};`}
   ${({ marginHorizontal }) =>
     marginHorizontal && `margin-horizontal: ${marginHorizontal.toString()};`}
+  ${({ ellipsizeMode }) => ellipsizeMode && `ellipsize-mode: ${ellipsizeMode};`}
+  ${({ numberOfLines }) => numberOfLines && `number-of-lines: ${numberOfLines};`}
 `;
 
 export default Text;

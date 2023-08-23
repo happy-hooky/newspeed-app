@@ -9,7 +9,6 @@ export default () => {
       <Stack.Screen
         options={{
           title: '',
-          headerShadowVisible: false,
           contentStyle: {
             backgroundColor: color.white,
           },

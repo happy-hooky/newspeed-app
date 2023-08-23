@@ -8,6 +8,8 @@ export default function Layout() {
       <Stack
         screenOptions={{
           headerBackTitleVisible: false,
+          headerShadowVisible: false,
+          animation: 'none',
         }}
       />
       <Modal />
