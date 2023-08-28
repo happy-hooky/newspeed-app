@@ -1,8 +1,8 @@
-import Secure from '@/util/secure';
+import Secure from '@/util/Secure';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://285e2bf7-5e72-4669-8459-11ff2d85d741.mock.pstmn.io/',
+  baseURL: 'https://66e908b8-16ad-4f81-9a4a-7a95c1701959.mock.pstmn.io/',
 });
 
 api.defaults.timeout = 1000 * 60 * 10;
@@ -17,9 +17,11 @@ api.interceptors.request.use(async (config) => {
 
 api.interceptors.response.use(
   (response) => {
+    console.log(response);
     return response;
   },
   (error) => {
+    console.log(error);
     return Promise.reject(error);
   },
 );

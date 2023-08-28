@@ -1,8 +1,14 @@
-import { View } from '@/components/atoms';
+import { Text, View } from '@/components/atoms';
 import { color } from '@/constants';
+import { YoutubeContentsResponse } from '@/models/request/YoutubeContentsResponse';
+import { Image } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 
-const YoutubeCardItem = () => {
+interface YoutubeCardItemProps {
+  data: YoutubeContentsResponse;
+}
+
+const YoutubeCardItem = ({ data }: YoutubeCardItemProps) => {
   return (
     <View width="100%" paddingBottom={20}>
       <Shadow
@@ -15,13 +21,7 @@ const YoutubeCardItem = () => {
         }}
       >
         <View width="100%">
-          <View
-            borderTopLeftRadius={12}
-            borderTopRightRadius={12}
-            width="100%"
-            height={180}
-            backgroundColor={color.cheese}
-          ></View>
+          <View borderTopLeftRadius={12} borderTopRightRadius={12} width="100%" height={180}></View>
           <View
             width="100%"
             height={60}
@@ -34,7 +34,21 @@ const YoutubeCardItem = () => {
             borderBottomEndRadius={12}
             borderBottomStartRadius={12}
             backgroundColor={color.white}
-          ></View>
+          >
+            <View padding={12} flexDirection="row" gap={12}>
+              <Image
+                source={{ uri: data.host.profileImgUrl }}
+                width={36}
+                height={36}
+                borderRadius={18}
+              />
+              <View>
+                <Text ellipsizeMode="tail" numberOfLines={2}>
+                  {data.youtube.title}
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
       </Shadow>
     </View>
