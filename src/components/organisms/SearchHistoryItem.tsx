@@ -1,25 +1,23 @@
 import { Image, Text, View } from '@/components/atoms';
 import { color } from '@/constants';
+import { router } from 'expo-router';
+import { useState } from 'react';
+import { Pressable } from 'react-native';
 
 const SearchHistoryItem = () => {
+  const [isCatergory, setIsCategory] = useState(false);
+
   return (
     <View flexDirection="row" justifyContent="space-between" marginTop={10}>
-      <View height={32} justifyContent="center">
-        <Text fontSize={16}>구루루</Text>
-      </View>
-      <View flexDirection="row" gap={8}>
-        <View
-          height={32}
-          paddingHorizontal={16}
-          borderRadius={4}
-          alignItems="center"
-          justifyContent="center"
-          backgroundColor={color.white}
-          borderColor={color.cheese}
-          borderWidth={2}
-        >
-          <Text>카테고리</Text>
+      <Pressable onPress={() => router.push('/')}>
+        <View height={32} justifyContent="center">
+          <Text fontSize={16}>구루루</Text>
         </View>
+      </Pressable>
+      <View flexDirection="row" gap={12} alignItems="center">
+        <Pressable onPress={() => setIsCategory(!isCatergory)}>
+          <Image src={isCatergory ? 'starFill' : 'star'} width={28} height={28} />
+        </Pressable>
         <View
           width={32}
           height={32}

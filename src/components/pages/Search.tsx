@@ -5,7 +5,7 @@ import { TextInput } from '@/components/molecules';
 import { getDefaultHeaderHeight } from '@react-navigation/elements';
 import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Keyboard, Pressable } from 'react-native';
 import { PopularSearchList, SearchHistoryList } from '@/components/organisms';
 
 const SearchPage = () => {
@@ -15,8 +15,8 @@ const SearchPage = () => {
   const headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
 
   return (
-    <>
-      <View padding={20} backgroundColor={color.papaya}>
+    <Pressable onPress={() => Keyboard.dismiss()}>
+      <View padding={20} backgroundColor={color.peach}>
         <View height={headerHeight} paddingTop={insets.top}>
           <Pressable onPress={() => router.back()}>
             <Image src="back" width={24} height={24} />
@@ -28,11 +28,17 @@ const SearchPage = () => {
           <SearchHistoryList />
         </View>
       </View>
-      <View paddingTop={32} paddingHorizontal={20} overflow="hidden">
+      <View
+        paddingTop={32}
+        paddingHorizontal={20}
+        overflow="hidden"
+        backgroundColor={color.white}
+        height="100%"
+      >
         <Text>추천 검색어</Text>
         <PopularSearchList />
       </View>
-    </>
+    </Pressable>
   );
 };
 

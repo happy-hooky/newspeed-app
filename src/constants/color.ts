@@ -6,4 +6,5 @@ export const color = {
   cheese: '#FFB677',
   twilight: '#EFF0EB',
   black: '#000000',
+  peach: '#FFF7F1',
 };

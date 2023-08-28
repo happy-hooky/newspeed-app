@@ -7,6 +7,7 @@ export default () => {
       <Stack.Screen
         options={{
           headerShown: false,
+          animation: 'simple_push',
         }}
       />
       <SearchPage />

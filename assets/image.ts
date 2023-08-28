@@ -6,6 +6,8 @@ const image = {
   youtube: require('./images/icon-youtube.png'),
   instagram: require('./images/icon-instagram.png'),
   delete: require('./images/icon-delete.png'),
+  star: require('./images/icon-star.png'),
+  starFill: require('./images/icon-star-fill.png'),
 };
 
 export default image;

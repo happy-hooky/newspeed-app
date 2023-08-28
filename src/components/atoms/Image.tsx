@@ -9,6 +9,8 @@ const ImageSource = {
   youtube: image['youtube'],
   instagram: image['instagram'],
   delete: image['delete'],
+  star: image['star'],
+  starFill: image['starFill'],
 };
 
 interface ImageProps extends ImageStyle {
