@@ -21,10 +21,20 @@ const YoutubeCardItem = ({ data }: YoutubeCardItemProps) => {
         }}
       >
         <View width="100%">
-          <View borderTopLeftRadius={12} borderTopRightRadius={12} width="100%" height={180}></View>
+          <View width="100%" height={180}>
+            <Image
+              source={{ uri: data.youtube.thumnailUrl }}
+              style={{
+                width: '100%',
+                height: '100%',
+                borderTopLeftRadius: 12,
+                borderTopRightRadius: 12,
+              }}
+            />
+          </View>
           <View
             width="100%"
-            height={60}
+            height={80}
             borderRightColor={color.twilight}
             borderLeftColor={color.twilight}
             borderBottomColor={color.twilight}
@@ -35,17 +45,30 @@ const YoutubeCardItem = ({ data }: YoutubeCardItemProps) => {
             borderBottomStartRadius={12}
             backgroundColor={color.white}
           >
-            <View padding={12} flexDirection="row" gap={12}>
+            <View padding={12} flexDirection="row" gap={12} flex={1} alignItems="center">
               <Image
                 source={{ uri: data.host.profileImgUrl }}
                 width={36}
                 height={36}
                 borderRadius={18}
               />
-              <View>
-                <Text ellipsizeMode="tail" numberOfLines={2}>
-                  {data.youtube.title}
-                </Text>
+              <View flex={1}>
+                <View flex={1}>
+                  <Text ellipsizeMode="tail" numberOfLines={2}>
+                    {data.youtube.title}
+                  </Text>
+                </View>
+                <View gap={12} flexDirection="row">
+                  <Text color={color.goldenGrow} fontSize={11}>
+                    {data.host.nickName}
+                  </Text>
+                  <Text color={color.goldenGrow} fontSize={11}>
+                    조회수 {data.youtube.views}
+                  </Text>
+                  <Text color={color.goldenGrow} fontSize={11}>
+                    {data.youtube.todayBefore}
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
