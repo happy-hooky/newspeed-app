@@ -20,7 +20,7 @@ export default () => {
                   <Image src="search" width={16} height={16} />
                 </Button>
               </Link>
-              <Link href="/mypage" asChild>
+              <Link href="/(auth)/mypage" asChild>
                 <Button>
                   <Image src="user" width={16} height={16} marginLeft={16} />
                 </Button>
