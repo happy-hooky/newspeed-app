@@ -28,64 +28,64 @@ const ProfilePage = () => {
             </Text>
           </View>
         </View>
-        <View backgroundColor={color.peach} height="100%" alignItems="center">
-          <View
-            width="90%"
-            height={60}
-            alignItems="center"
-            paddingLeft={20}
-            paddingRight={20}
-            justifyContent="space-between"
-            flexDirection="row"
-            marginTop={20}
-            borderRadius={8}
-            backgroundColor={color.white}
-          >
-            <Link href="/mypage/inventory" asChild>
-              <Button>
+        <View backgroundColor={color.peach} padding={20} height="100%" alignItems="center">
+          <Link href="/mypage/inventory" asChild>
+            <Button>
+              <View
+                width="100%"
+                height={60}
+                alignItems="center"
+                paddingLeft={20}
+                paddingRight={20}
+                justifyContent="space-between"
+                flexDirection="row"
+                borderRadius={8}
+                marginBottom={20}
+                backgroundColor={color.white}
+              >
                 <Text fontSize={16}>🌟보관함</Text>
-              </Button>
-            </Link>
-            <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
-          </View>
-          <View
-            width="90%"
-            height={60}
-            alignItems="center"
-            paddingLeft={20}
-            paddingRight={20}
-            justifyContent="space-between"
-            flexDirection="row"
-            marginTop={20}
-            borderRadius={8}
-            backgroundColor={color.white}
-          >
-            <Link href="/mypage/inquiry" asChild>
-              <Button>
+                <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
+              </View>
+            </Button>
+          </Link>
+          <Link href="/mypage/inquiry" asChild>
+            <Button>
+              <View
+                width="100%"
+                height={60}
+                alignItems="center"
+                paddingLeft={20}
+                paddingRight={20}
+                justifyContent="space-between"
+                flexDirection="row"
+                marginBottom={20}
+                borderRadius={8}
+                backgroundColor={color.white}
+              >
                 <Text fontSize={16}>💡문의하기</Text>
-              </Button>
-            </Link>
-            <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
-          </View>
-          <View
-            width="90%"
-            height={60}
-            alignItems="center"
-            paddingLeft={20}
-            paddingRight={20}
-            justifyContent="space-between"
-            flexDirection="row"
-            marginTop={20}
-            borderRadius={8}
-            backgroundColor={color.white}
-          >
-            <Link href="/mypage/alarm" asChild>
-              <Button>
+                <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
+              </View>
+            </Button>
+          </Link>
+          <Link href="/mypage/alarm" asChild>
+            <Button>
+              <View
+                width="100%"
+                height={60}
+                alignItems="center"
+                paddingLeft={20}
+                paddingRight={20}
+                justifyContent="space-between"
+                flexDirection="row"
+                marginBottom={20}
+                borderRadius={8}
+                backgroundColor={color.white}
+              >
                 <Text fontSize={16}>✉️알림설정</Text>
-              </Button>
-            </Link>
-            <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
-          </View>
+                <Image src="back" width={16} height={16} transform={[{ rotate: '180deg' }]} />
+              </View>
+            </Button>
+          </Link>
         </View>
       </View>
     </View>
