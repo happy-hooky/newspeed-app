@@ -22,15 +22,17 @@ const View = styled(_View)<ViewStyle>`
   ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()};`}
   ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft.toString()};`}
   ${({ marginRight }) => marginRight && `margin-right: ${marginRight.toString()};`}
-  ${({ paddingVertical }) => paddingVertical && `padding-vertical: ${paddingVertical.toString()};`}
+  ${({ paddingVertical }) =>
+    paddingVertical && `padding-vertical: ${paddingVertical.toString()}px;`}
   ${({ paddingHorizontal }) =>
-    paddingHorizontal && `padding-horizontal: ${paddingHorizontal.toString()};`}
+    paddingHorizontal && `padding-horizontal: ${paddingHorizontal.toString()}px;`}
   ${({ alignSelf }) => alignSelf && `align-self: ${alignSelf};`}
   ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius.toString()}px;`}
   ${({ borderBottomEndRadius }) =>
-    borderBottomEndRadius && `border-bottom-end-radius: ${borderBottomEndRadius.toString()};`}
+    borderBottomEndRadius && `border-bottom-end-radius: ${borderBottomEndRadius.toString()}px;`}
   ${({ borderBottomStartRadius }) =>
-    borderBottomStartRadius && `border-bottom-start-radius: ${borderBottomStartRadius.toString()};`}
+    borderBottomStartRadius &&
+    `border-bottom-start-radius: ${borderBottomStartRadius.toString()}px;`}
   ${({ shadowColor }) => shadowColor && `shadow-color: ${shadowColor.toString()};`}
   ${({ shadowOpacity }) => shadowOpacity && `shadow-opacity: ${shadowOpacity.toString()};`}
   ${({ position }) => position && `position: ${position};`}

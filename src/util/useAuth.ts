@@ -8,7 +8,7 @@ const useAuth = () => {
   const [session, setSession] = useState<string | null>(null);
 
   if (inAuthGroup && !session) {
-    router.replace('/login');
+    console.log('require session');
   }
 
   useEffect(() => {

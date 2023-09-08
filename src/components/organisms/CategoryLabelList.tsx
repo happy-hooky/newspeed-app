@@ -41,8 +41,8 @@ const CategoryLabelList = () => {
 export default CategoryLabelList;
 
 const CategoryLabel = styled.View<{ isActive: boolean }>`
-  padding-vertical: 6;
-  padding-horizontal: 20;
+  padding-vertical: 6px;
+  padding-horizontal: 20px;
   border-color: ${({ isActive }) => (isActive ? color.cheese : color.twilight)};
   border-width: 2px;
   align-self: center;

@@ -1,9 +1,11 @@
 import { Button, View, Image } from '@/components/atoms';
 import { MainPage } from '@/components/pages';
 import { color } from '@/constants';
+import useAuth from '@/util/useAuth';
 import { Link, Stack } from 'expo-router';
 
 export default () => {
+  useAuth();
   return (
     <>
       <Stack.Screen
