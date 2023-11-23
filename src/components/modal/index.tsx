@@ -1,6 +1,6 @@
-import SelectBoxModal from './SelectBoxModal';
+import PlatformModal from '@/components/modal/PlatformModal';
 
-export const Modals = { selectBoxModal: SelectBoxModal };
+export const Modals = { platformModal: PlatformModal };
 
 export interface ModalProps {
   hash: string;
@@ -8,7 +8,7 @@ export interface ModalProps {
   payload?: { [key: string]: any };
 }
 
-export const getModal = (modalProps: ModalProps) => {
-  const Modal = Modals[modalProps.type];
-  return <Modal {...modalProps} />;
+export const getModal = ({ hash, type, payload }: ModalProps) => {
+  const Modal = Modals[type];
+  return Modal({ hash, payload });
 };

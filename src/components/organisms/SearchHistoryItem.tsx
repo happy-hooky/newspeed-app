@@ -2,22 +2,22 @@ import { Image, Text, View } from '@/components/atoms';
 import { color } from '@/constants';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Pressable } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 const SearchHistoryItem = () => {
   const [isCatergory, setIsCategory] = useState(false);
 
   return (
     <View flexDirection="row" justifyContent="space-between" marginTop={10}>
-      <Pressable onPress={() => router.push('/')}>
+      <TouchableOpacity onPress={() => router.push('/')}>
         <View height={32} justifyContent="center">
           <Text fontSize={16}>구루루</Text>
         </View>
-      </Pressable>
+      </TouchableOpacity>
       <View flexDirection="row" gap={12} alignItems="center">
-        <Pressable onPress={() => setIsCategory(!isCatergory)}>
+        <TouchableOpacity onPress={() => setIsCategory(!isCatergory)}>
           <Image src={isCatergory ? 'starFill' : 'star'} width={28} height={28} />
-        </Pressable>
+        </TouchableOpacity>
         <View
           width={32}
           height={32}

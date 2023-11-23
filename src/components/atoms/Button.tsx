@@ -19,7 +19,7 @@ const designType = {
   `,
 };
 
-const Button = styled.Pressable<
+const Button = styled.TouchableOpacity<
   ViewStyle & { size?: keyof typeof sizeType; design?: keyof typeof designType }
 >`
   ${({ design }) => design && designType[`${design}`]}

@@ -1,38 +1,25 @@
 import { Image, Text, View } from '@/components/atoms';
-import { SelectBox } from '@/components/organisms';
+import { useModal } from '@/util/useModal';
 import { useState } from 'react';
+import { TouchableOpacity } from 'react-native';
 
 const PlatformSelectBox = () => {
+  const { onModal } = useModal();
   const [selectedPlatform, setSelectedPlatform] = useState('YOUTUBE');
 
+  const openPlatformModal = () => {
+    onModal({
+      type: 'platformModal',
+    });
+  };
+
   return (
-    <SelectBox
-      selectedValue={selectedPlatform}
-      options={[
-        {
-          value: 'YOUTUBE',
-          selectedElement: <Image src="youtube" width={28} height={20} />,
-          element: (
-            <View flexDirection="row" gap={12} alignItems="flex-start">
-              <Image src="youtube" width={28} height={20} marginBottom={12} />
-              <Text>Youtube</Text>
-            </View>
-          ),
-          handleSelect: () => setSelectedPlatform('YOUTUBE'),
-        },
-        {
-          value: 'INSTAGRAM',
-          selectedElement: <Image src="instagram" width={20} height={20} />,
-          element: (
-            <View flexDirection="row" gap={12} alignItems="flex-start">
-              <Image src="instagram" width={20} height={20} />
-              <Text>Instagram</Text>
-            </View>
-          ),
-          handleSelect: () => setSelectedPlatform('INSTAGRAM'),
-        },
-      ]}
-    />
+    <TouchableOpacity onPress={openPlatformModal}>
+      <View width={60} flexDirection="row" alignItems="flex-start" justifyContent="center" gap={12}>
+        <Image src="youtube" width={28} height={20} />
+        <Image src="back" width={16} height={16} transform={[{ rotate: '270deg' }]} />
+      </View>
+    </TouchableOpacity>
   );
 };
 

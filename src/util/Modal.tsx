@@ -1,10 +1,10 @@
 import { getModal } from '@/components/modal';
 import { ModalState } from '@/recoil/system';
 import { Fragment } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 const Modal = () => {
-  const [modalState, setModalState] = useRecoilState(ModalState);
+  const modalState = useRecoilValue(ModalState);
 
   return (
     <>
