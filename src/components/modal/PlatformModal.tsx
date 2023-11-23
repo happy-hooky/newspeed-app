@@ -5,15 +5,10 @@ import { ModalBaseProps } from '@/models/ModalBaseProps';
 const PlatformModal = ({ hash, payload }: ModalBaseProps) => {
   return (
     <SlideUpModal hash={hash}>
-      <View
-        height={280}
-        flex={1}
-        backgroundColor="white"
-        borderTopLeftRadius={12}
-        borderTopRightRadius={12}
-      >
-        <Text>123</Text>
-      </View>
+      <Text>1231</Text>
+      <Text>1231</Text>
+      <Text>1231</Text>
+      <Text>1231</Text>
     </SlideUpModal>
   );
 };
