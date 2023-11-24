@@ -1,9 +1,19 @@
-import AlarmPage from './Alarm';
-import LoginPage from './Login';
-import MainPage from './Main';
-import ProfilePage from './Profile';
-import SearchPage from './Search';
-import InventoryPage from './Inventory';
-import InquiryPage from './Inquiry';
+import AlarmPage from './AlarmPage';
+import LoginPage from './LoginPage';
+import ContentsPage from './ContentsPage';
+import ProfilePage from './ProfilePage';
+import SearchPage from './SearchPage';
+import InventoryPage from './InventoryPage';
+import InquiryPage from './InquiryPage';
+import MainPage from './MainPage';
 
-export { AlarmPage, LoginPage, MainPage, ProfilePage, SearchPage, InventoryPage, InquiryPage };
+export {
+  AlarmPage,
+  LoginPage,
+  ContentsPage,
+  ProfilePage,
+  SearchPage,
+  InventoryPage,
+  InquiryPage,
+  MainPage,
+};

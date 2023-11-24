@@ -3,7 +3,7 @@ import { color } from '@/constants';
 import { CategoryLabelList, YoutubeCardList } from '@/components/organisms';
 import PlatformSelectBox from './PlatformSelectBox';
 
-const MainTemplate = () => {
+const ContentsTemplate = () => {
   return (
     <View paddingHorizontal={12} paddingTop={12} alignItems="flex-start">
       <View flexDirection="row" alignItems="center" gap={20}>
@@ -18,4 +18,4 @@ const MainTemplate = () => {
   );
 };
 
-export default MainTemplate;
+export default ContentsTemplate;

@@ -1,3 +1,3 @@
-import MainTemplate from './MainTemplate';
+import ContentsTemplate from './ContentsTemplate';
 
-export { MainTemplate };
+export { ContentsTemplate };
