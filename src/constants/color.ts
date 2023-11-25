@@ -7,4 +7,5 @@ export const color = {
   primary: '#FFB677',
   twilight: '#EFF0EB',
   white: '#FFFFFF',
+  gray: '#848484',
 };

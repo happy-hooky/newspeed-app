@@ -1,5 +1,5 @@
 import { Image, Text, View } from '@/components/atoms';
-import { useModal } from '@/util/useModal';
+import { useModal } from '@/hook/useModal';
 import { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 
