@@ -1,38 +1,17 @@
-import { Button, View, Image } from '@/components/atoms';
-import { MainPage } from '@/components/pages';
-import { color } from '@/constants';
-import useAuth from '@/util/useAuth';
-import { Link, Stack } from 'expo-router';
+import useAuth from '@/hook/useAuth';
+import useFontsLoad from '@/hook/useFontsLoad';
+import { Redirect } from 'expo-router';
 
 export default () => {
   useAuth();
+  const isFontLoaded = useFontsLoad();
 
-  return (
-    <>
-      <Stack.Screen
-        options={{
-          title: '',
-          contentStyle: {
-            backgroundColor: color.white,
-          },
-          headerLeft: () => <Image src="logo" width={32} height={32} />,
-          headerRight: () => (
-            <View flexDirection="row">
-              <Link href="/search" asChild>
-                <Button>
-                  <Image src="search" width={16} height={16} />
-                </Button>
-              </Link>
-              <Link href="/(auth)/mypage" asChild>
-                <Button>
-                  <Image src="user" width={16} height={16} marginLeft={16} />
-                </Button>
-              </Link>
-            </View>
-          ),
-        }}
-      />
-      <MainPage />
-    </>
-  );
+  if (!isFontLoaded) return null;
+  if (isFontLoaded) {
+    return (
+      <>
+        <Redirect href={'/(tabs)/main'} />
+      </>
+    );
+  }
 };
