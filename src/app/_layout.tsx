@@ -14,6 +14,7 @@ export default function Layout() {
             headerBackTitleVisible: false,
             headerShadowVisible: false,
             animation: 'none',
+            headerShown: false,
           }}
         />
         <Modal />

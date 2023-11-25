@@ -1,27 +1,13 @@
 import * as React from 'react';
-import { Image, Text, View } from '@/components/atoms';
+import { Text, View } from '@/components/atoms';
 import { color } from '@/constants';
 import { TextInput } from '@/components/molecules';
-import { getDefaultHeaderHeight } from '@react-navigation/elements';
-import { useSafeAreaFrame, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
-import { Keyboard, TouchableOpacity } from 'react-native';
 import { PopularSearchList, SearchHistoryList } from '@/components/organisms';
 
 const SearchPage = () => {
-  const frame = useSafeAreaFrame();
-  const insets = useSafeAreaInsets();
-
-  const headerHeight = getDefaultHeaderHeight(frame, false, insets.top);
-
   return (
-    <TouchableOpacity onPress={() => Keyboard.dismiss()}>
+    <View>
       <View padding={20} backgroundColor={color.peach}>
-        <View height={headerHeight} paddingTop={insets.top}>
-          <TouchableOpacity onPress={() => router.back()}>
-            <Image src="back" width={24} height={24} />
-          </TouchableOpacity>
-        </View>
         <TextInput design="search" />
         <View marginTop={28}>
           <Text>검색 기록</Text>
@@ -38,7 +24,7 @@ const SearchPage = () => {
         <Text>추천 검색어</Text>
         <PopularSearchList />
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
