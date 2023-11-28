@@ -19,7 +19,7 @@ const LoginPage = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image src="back" width={20} height={20} />
+            <Image src="back" width={20} height={20} marginLeft={4} />
           </View>
         </Button>
       </View>
