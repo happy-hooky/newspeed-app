@@ -5,7 +5,7 @@ export const color = {
   papaya: '#FFDBBF',
   peach: '#FFF7F1',
   primary: '#FFB677',
-  twilight: '#EFF0EB',
+  twilight: '#F4F2F0',
   white: '#FFFFFF',
   gray: '#848484',
 };

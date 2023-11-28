@@ -17,7 +17,7 @@ const View = styled(_View)<ViewStyle>`
   ${({ borderRightColor }) =>
     borderRightColor && `border-right-color: ${borderRightColor.toString()};`}
   ${({ borderLeftColor }) => borderLeftColor && `border-left-color: ${borderLeftColor.toString()};`}
-  ${({ margin }) => margin && `margin: ${margin.toString()};`}
+  ${({ margin }) => margin && `margin: ${margin.toString()}px;`}
   ${({ marginBottom }) => marginBottom && `margin-bottom: ${marginBottom.toString()}px;`}
   ${({ marginTop }) => marginTop && `margin-top: ${marginTop.toString()};`}
   ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft.toString()};`}

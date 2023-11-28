@@ -20,7 +20,7 @@ export default function TabsLayout() {
         name="main"
         options={{
           tabBarLabel: '홈',
-          headerTitle: '메인',
+          headerTitle: '',
           tabBarIcon: () => <Image src="category" width={30} height={30} />,
         }}
       />

@@ -1,34 +1,47 @@
-import { TextStyle } from 'react-native';
+import {
+  TextStyle,
+  TextInput as _TextInput,
+  TextInputProps as _TextInputProps,
+} from 'react-native';
 import styled, { css } from 'styled-components/native';
 import { color } from '@/constants';
-import { Text, View } from '@/components/atoms';
+import { Image } from '@/components/atoms';
 
 const designType = {
   search: css`
-    padding-horizontal: 16px;
-    background-color: ${color.white};
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: ${color.twilight};
     width: 100%;
-    height: 32px;
-    border-radius: 16px;
+    height: 56px;
+    border-radius: 8px;
     font-size: 14px;
-    border-width: 2px;
-    border-color: ${color.papaya};
   `,
 };
 
-const StyleTextInput = styled.TextInput<TextStyle & { design: keyof typeof designType }>`
+const StyleTextInput = styled.View<TextStyle & { design: keyof typeof designType }>`
   ${({ design }) => design && designType[design]}
 `;
 
-const TextInput = ({ design }: { design: keyof typeof designType }) => {
+interface TextInputProps {
+  design: keyof typeof designType;
+}
+
+const TextInput = ({ design, ...textinputProps }: TextInputProps & _TextInputProps) => {
   return (
-    <StyleTextInput design={design} flexDirection="row" justifyContent="space-between">
-      <View>
-        <Text>prefix</Text>
-      </View>
-      <View>
-        <Text>suffix</Text>
-      </View>
+    <StyleTextInput
+      design={design}
+      flexDirection="row"
+      justifyContent="flex-start"
+      alignItems="center"
+      gap={16}
+    >
+      {design === 'search' && <Image src="search" width={16} height={16} />}
+      <_TextInput
+        style={{ flex: 1, fontSize: 16 }}
+        selectionColor={color.black}
+        {...textinputProps}
+      />
     </StyleTextInput>
   );
 };
