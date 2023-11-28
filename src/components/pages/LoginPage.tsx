@@ -1,24 +1,29 @@
 import React from 'react';
 import { Text, View, Button, Image } from '@/components/atoms';
 import { color } from '@/constants';
-import { Link } from 'expo-router';
 
 const LoginPage = () => {
   return (
-    <View backgroundColor={color.white}>
-      <View alignItems="center" justifyContent="center" height={162}>
-        <Link href="/" asChild>
-          <Button>
-            <Image src="logo" width={32} height={32} />
-          </Button>
-        </Link>
-      </View>
-      <Button size="basic" design="primary">
-        <Text>Apple Login</Text>
+    <View backgroundColor={color.white} flex={1} justifyContent="center" alignItems="center">
+      <Button>
+        <View
+          width={300}
+          height={50}
+          backgroundColor="#FEE500"
+          borderRadius={7}
+          flexDirection="row"
+          alignItems="center"
+          paddingHorizontal={14}
+        >
+          <Image src="kakaoLogo" width={22} height={22} />
+          <View flex={1} justifyContent="center" alignItems="center">
+            <Text color="rgba(0, 0, 0, 0.85)" fontSize={21} fontFamily="medium">
+              카카오 로그인
+            </Text>
+          </View>
+        </View>
       </Button>
-      <Button size="basic" design="primary">
-        <Text>Kakao Login</Text>
-      </Button>
+      <Image src="appleSignIn" width={300} resizeMode="contain" />
     </View>
   );
 };

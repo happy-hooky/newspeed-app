@@ -14,6 +14,9 @@ const ASSETS = {
   fontRegular: require('./fonts/SpoqaHanSansNeo-Regular.ttf'),
   fontMedium: require('./fonts/SpoqaHanSansNeo-Medium.ttf'),
   fontBold: require('./fonts/SpoqaHanSansNeo-Bold.ttf'),
+  kakaoSignIn: require('./images/sign_kakao_large.png'),
+  appleSignIn: require('./images/sign_apple.png'),
+  kakaoLogo: require('./images/kakao_logo.png'),
 };
 
 export default ASSETS;
