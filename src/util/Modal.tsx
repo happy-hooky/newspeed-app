@@ -1,5 +1,5 @@
 import { getModal } from '@/components/modal';
-import { ModalState } from '@/recoil/system';
+import { ModalState } from '@/recoil/atom/system';
 import { Fragment } from 'react';
 import { useRecoilValue } from 'recoil';
 

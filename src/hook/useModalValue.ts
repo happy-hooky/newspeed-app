@@ -1,4 +1,4 @@
-import { ModalState } from '@/recoil/system';
+import { ModalState } from '@/recoil/atom/system';
 import { useRecoilState } from 'recoil';
 
 export const useModalValue = (hash: string) => {

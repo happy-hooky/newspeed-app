@@ -1,6 +1,6 @@
 import { View } from '@/components/atoms';
 import { color } from '@/constants';
-import { ModalState } from '@/recoil/system';
+import { ModalState } from '@/recoil/atom/system';
 import { useEffect, useRef, useState } from 'react';
 import { Animated, TouchableWithoutFeedback } from 'react-native';
 import { useSetRecoilState } from 'recoil';

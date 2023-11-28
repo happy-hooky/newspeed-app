@@ -1,5 +1,5 @@
 import { Modals } from '@/components/modal';
-import { ModalState } from '@/recoil/system';
+import { ModalState } from '@/recoil/atom/system';
 import { useSetRecoilState } from 'recoil';
 
 interface onModalArgs {

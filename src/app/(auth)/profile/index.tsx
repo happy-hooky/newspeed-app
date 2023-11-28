@@ -8,6 +8,7 @@ export default () => {
       <Stack.Screen
         options={{
           title: '마이페이지',
+          headerShown: true,
           headerShadowVisible: false,
           headerTintColor: color.black,
         }}

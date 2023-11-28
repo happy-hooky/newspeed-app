@@ -14,3 +14,8 @@ export const ModalState = atom<
   key: 'modalState',
   default: [],
 });
+
+export const StorageState = atom<{ [key: string]: string | null }>({
+  key: 'storageState',
+  default: {},
+});
