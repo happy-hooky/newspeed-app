@@ -1,8 +1,11 @@
 import React from 'react';
-import { Text, View, Button, Image } from '@/components/atoms';
+import { Text, View, Image } from '@/components/atoms';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Link } from 'expo-router';
+import { color } from '@/constants';
+import AppleLogin from '@/components/pages/LoginPage/AppleLogin';
+import KaKaoLogin from '@/components/pages/LoginPage/KaKaoLogin';
 
 const LoginPage = () => {
   const insets = useSafeAreaInsets();
@@ -11,7 +14,7 @@ const LoginPage = () => {
     <>
       <View width="100%" flex={1} justifyContent="space-between" alignItems="flex-start">
         <View zIndex={1} paddingHorizontal={16} marginTop={insets.top + 40}>
-          <Link href={{ pathname: '/(tabs)/main' }}>
+          <Link href={{ pathname: '/(tabs)/main' }} replace={true}>
             <View width={44} height={44} alignItems="center" justifyContent="center">
               <Image src="back" width={20} height={20} marginLeft={4} />
             </View>
@@ -33,38 +36,20 @@ const LoginPage = () => {
             'rgba(211, 204, 24, 0.3)',
             'rgba(237, 166, 37, 0.3)',
             'rgba(228, 108, 124, 0.3)',
-            'rgba(255, 255, 255, 0.6)',
+            color.white,
           ]}
         />
       </View>
-
       <View
         width="100%"
         height={320}
         borderRadius={8}
         alignItems="center"
         justifyContent="center"
-        backgroundColor="rgba(255, 255, 255, 0.6)"
+        backgroundColor={color.white}
       >
-        <Button>
-          <View
-            width={300}
-            height={50}
-            backgroundColor="#FEE500"
-            borderRadius={7}
-            flexDirection="row"
-            alignItems="center"
-            paddingHorizontal={14}
-          >
-            <Image src="kakaoLogo" width={22} height={22} />
-            <View flex={1} justifyContent="center" alignItems="center">
-              <Text color="rgba(0, 0, 0, 0.85)" fontSize={21} fontFamily="medium">
-                카카오 로그인
-              </Text>
-            </View>
-          </View>
-        </Button>
-        <Image src="appleSignIn" width={300} height={60} marginVertical={20} resizeMode="contain" />
+        <KaKaoLogin />
+        <AppleLogin />
       </View>
     </>
   );

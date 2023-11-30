@@ -1,13 +1,20 @@
 import { Text, View } from '@/components/atoms';
 import { YoutubeCardList } from '@/components/organisms';
 import PlatformSelectBox from './PlatformSelectBox';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link } from 'expo-router';
+import { Link, useLocalSearchParams } from 'expo-router';
+import { TextInput } from '@/components/molecules';
+import { color } from '@/constants';
+import { SafeAreaView, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const ContentsTemplate = () => {
+  const { category } = useLocalSearchParams<{ category: string }>();
+  const insets = useSafeAreaInsets();
+  const { height } = useWindowDimensions();
+
   return (
-    <SafeAreaView>
-      <View width="100%" paddingTop={12} alignItems="flex-start">
+    <SafeAreaView style={{ backgroundColor: color.white }}>
+      <View backgroundColor={color.white} width="100%" paddingTop={12} alignItems="flex-start">
         <View
           width="100%"
           flexDirection="row"
@@ -27,7 +34,12 @@ const ContentsTemplate = () => {
           </View>
           <PlatformSelectBox />
         </View>
-        <YoutubeCardList />
+        <View paddingHorizontal={12} justifyContent="center" marginBottom={20}>
+          <TextInput design="search" value={category} />
+        </View>
+        <View height={height - insets.top - 160}>
+          <YoutubeCardList />
+        </View>
       </View>
     </SafeAreaView>
   );

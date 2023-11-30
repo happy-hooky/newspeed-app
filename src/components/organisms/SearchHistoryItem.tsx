@@ -1,37 +1,40 @@
 import { Image, Text, View } from '@/components/atoms';
-import { color } from '@/constants';
-import { router } from 'expo-router';
+import { Link } from 'expo-router';
 import { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
 
-const SearchHistoryItem = () => {
+interface SearchHistoryItemProps {
+  id: number;
+  text: string;
+}
+
+const SearchHistoryItem = ({ id, text }: SearchHistoryItemProps) => {
   const [isCatergory, setIsCategory] = useState(false);
 
   return (
-    <View flexDirection="row" justifyContent="space-between" marginTop={10}>
-      <TouchableOpacity onPress={() => router.push('/')}>
-        <View height={32} justifyContent="center">
-          <Text fontSize={16}>구루루</Text>
+    <View width="100%" height={54}>
+      <Link
+        href={{
+          pathname: '/[category]',
+          params: {
+            category: 'sample',
+          },
+        }}
+      >
+        <View width="100%" flexDirection="row" alignItems="center" justifyContent="space-between">
+          <View flexDirection="row" alignItems="center" justifyContent="center">
+            <Text marginRight={8}>•</Text>
+            <Text fontSize={16}>구루루</Text>
+          </View>
+          <View flexDirection="row" alignItems="center">
+            <Text>09.21</Text>
+            <View width={44} height={44} alignItems="flex-end" justifyContent="center">
+              <Image src="delete" width={20} height={20} />
+            </View>
+          </View>
         </View>
-      </TouchableOpacity>
-      <View flexDirection="row" gap={12} alignItems="center">
-        <TouchableOpacity onPress={() => setIsCategory(!isCatergory)}>
-          <Image src={isCatergory ? 'starFill' : 'star'} width={28} height={28} />
-        </TouchableOpacity>
-        <View
-          width={32}
-          height={32}
-          backgroundColor={color.white}
-          borderWidth={2}
-          borderColor={color.cheese}
-          borderRadius={4}
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Image src="delete" width={16} height={16} />
-        </View>
-      </View>
+      </Link>
     </View>
   );
 };
+
 export default SearchHistoryItem;

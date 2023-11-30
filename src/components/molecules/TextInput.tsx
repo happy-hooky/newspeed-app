@@ -14,7 +14,7 @@ const designType = {
     background-color: ${color.twilight};
     width: 100%;
     height: 56px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 14px;
   `,
 };

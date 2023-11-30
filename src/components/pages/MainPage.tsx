@@ -46,7 +46,7 @@ const MainPage = () => {
     <>
       <SafeAreaView style={{ flex: 1, backgroundColor: color.white }}>
         <View flex={1}>
-          <View height={160} paddingHorizontal={20} justifyContent="flex-end">
+          <View height={108} paddingHorizontal={20} justifyContent="flex-end">
             <Text fontSize={28} fontFamily="bold" lineHeight={40}>
               관심사를{'\n'}선택해주세요.
             </Text>
@@ -54,7 +54,7 @@ const MainPage = () => {
           <View
             width="100%"
             height={40}
-            marginTop={40}
+            marginTop={12}
             paddingHorizontal={20}
             flexDirection="row"
             alignItems="center"
