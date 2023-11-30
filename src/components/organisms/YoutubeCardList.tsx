@@ -2,6 +2,7 @@ import YoutubeCard from '@/components/organisms/YoutubeCardItem';
 import { ScrollView } from 'react-native';
 import { useSearch } from '@/hook/query/search';
 import { format } from 'date-fns';
+import { View } from '@/components/atoms';
 
 const YoutubeCardList = () => {
   const now = new Date();
@@ -16,10 +17,12 @@ const YoutubeCardList = () => {
 
   return (
     <ScrollView>
-      {youtubeData?.map((item) => {
-        const hash = Math.random().toString(36).substring(2, 11) + `${new Date().getTime()}`;
-        return <YoutubeCard key={hash} data={item} />;
-      })}
+      <View paddingHorizontal={12}>
+        {youtubeData?.map((item) => {
+          const hash = Math.random().toString(36).substring(2, 11) + `${new Date().getTime()}`;
+          return <YoutubeCard key={hash} data={item} />;
+        })}
+      </View>
     </ScrollView>
   );
 };

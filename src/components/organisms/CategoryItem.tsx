@@ -1,12 +1,11 @@
 import { Text, View } from '@/components/atoms';
 import { color } from '@/constants';
+import { Link } from 'expo-router';
 
 const CategoryItem = () => {
   return (
     <View
-      flex={1}
       height={72}
-      padding={12}
       borderRadius={4}
       backgroundColor={color.white}
       shadowColor={color.black}
@@ -15,7 +14,16 @@ const CategoryItem = () => {
       shadowRadius={2}
       elevation={5}
     >
-      <Text>123</Text>
+      <Link
+        href={{
+          pathname: '/[category]',
+          params: { category: 'sample' },
+        }}
+      >
+        <View width="100%" height="100%" padding={12}>
+          <Text>123</Text>
+        </View>
+      </Link>
     </View>
   );
 };

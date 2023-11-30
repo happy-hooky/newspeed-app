@@ -1,20 +1,35 @@
 import { Text, View } from '@/components/atoms';
-import { color } from '@/constants';
-import { CategoryLabelList, YoutubeCardList } from '@/components/organisms';
+import { YoutubeCardList } from '@/components/organisms';
 import PlatformSelectBox from './PlatformSelectBox';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Link } from 'expo-router';
 
 const ContentsTemplate = () => {
   return (
-    <View paddingHorizontal={12} paddingTop={12} alignItems="flex-start">
-      <View flexDirection="row" alignItems="center" gap={20}>
-        <View flex={1} borderRightColor={color.twilight} borderRightWidth={2} paddingRight={20}>
-          <CategoryLabelList />
+    <SafeAreaView>
+      <View width="100%" paddingTop={12} alignItems="flex-start">
+        <View
+          width="100%"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-between"
+          marginBottom={20}
+          paddingHorizontal={12}
+        >
+          <View marginTop={4}>
+            <Link href={{ pathname: '/(tabs)/main' }}>
+              <View flexDirection="row" alignItems="center" gap={4}>
+                <Text fontSize={16} fontFamily="medium">
+                  Newspeed
+                </Text>
+              </View>
+            </Link>
+          </View>
+          <PlatformSelectBox />
         </View>
-        <PlatformSelectBox />
+        <YoutubeCardList />
       </View>
-      <Text marginVertical={12}>카테고리를 등록해 관심 분야의 최신 피드를 받아보세요 </Text>
-      <YoutubeCardList />
-    </View>
+    </SafeAreaView>
   );
 };
 

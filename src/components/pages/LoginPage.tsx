@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, Button, Image } from '@/components/atoms';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
+import { Link } from 'expo-router';
 
 const LoginPage = () => {
   const insets = useSafeAreaInsets();
@@ -11,11 +11,11 @@ const LoginPage = () => {
     <>
       <View width="100%" flex={1} justifyContent="space-between" alignItems="flex-start">
         <View zIndex={1} paddingHorizontal={16} marginTop={insets.top + 40}>
-          <Button onPress={() => router.replace('/(tabs)/main')}>
+          <Link href={{ pathname: '/(tabs)/main' }}>
             <View width={44} height={44} alignItems="center" justifyContent="center">
               <Image src="back" width={20} height={20} marginLeft={4} />
             </View>
-          </Button>
+          </Link>
         </View>
         <View zIndex={1} width="100%">
           <View paddingVertical={80} width="100%" paddingHorizontal={28}>
