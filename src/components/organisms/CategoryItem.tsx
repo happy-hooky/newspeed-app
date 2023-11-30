@@ -1,23 +1,21 @@
 import { Text, View } from '@/components/atoms';
 import { color } from '@/constants';
-import { LinearGradient } from 'expo-linear-gradient';
 
 const CategoryItem = () => {
   return (
     <View
       flex={1}
-      margin={4}
       height={72}
-      marginBottom={12}
+      padding={12}
+      borderRadius={4}
       backgroundColor={color.white}
-      borderRadius={8}
       shadowColor={color.black}
-      shadowOffset={{ width: 0, height: 2 }}
-      shadowOpacity={0.1}
-      shadowRadius={8}
-      elevation={4}
+      shadowOffset={{ width: 0, height: 1 }}
+      shadowOpacity={0.25}
+      shadowRadius={2}
+      elevation={5}
     >
-      <Text></Text>
+      <Text>123</Text>
     </View>
   );
 };

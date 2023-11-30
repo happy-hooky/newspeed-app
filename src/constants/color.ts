@@ -8,4 +8,5 @@ export const color = {
   twilight: '#F4F2F0',
   white: '#FFFFFF',
   gray: '#848484',
+  whiteSmoke: '#D5D5D5',
 };

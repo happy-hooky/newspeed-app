@@ -17,6 +17,8 @@ const ASSETS = {
   kakaoSignIn: require('./images/sign_kakao_large.png'),
   appleSignIn: require('./images/sign_apple.png'),
   kakaoLogo: require('./images/kakao_logo.png'),
+  add: require('./images/icon-add.png'),
+  addBlack: require('./images/icon-add-black.png'),
 };
 
 export default ASSETS;

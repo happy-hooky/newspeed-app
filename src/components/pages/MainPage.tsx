@@ -1,7 +1,7 @@
-import { Button, Image, Text, View } from '@/components/atoms';
+import { Image, Text, View } from '@/components/atoms';
 import CategoryItem from '@/components/organisms/CategoryItem';
 import { color } from '@/constants';
-import { FlatList, SafeAreaView } from 'react-native';
+import { FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 
 const MainPage = () => {
   const categories = [
@@ -30,22 +30,44 @@ const MainPage = () => {
   return (
     <>
       <SafeAreaView style={{ flex: 1, backgroundColor: color.white }}>
-        <View padding={8} flexDirection="row" alignItems="flex-end">
-          <Image src="logo" width={32} height={32} />
-          <Text fontSize={20} fontFamily="bold" color="rgba(227, 171, 38, 1)">
-            Newspeed
-          </Text>
-        </View>
-        <View padding={12} marginTop={40} backgroundColor={color.white} flex={1}>
-          <Text marginBottom={20} fontSize={28} fontFamily="bold" lineHeight={40}>
-            관심사를{'\n'}선택해주세요.
-          </Text>
-          <FlatList data={categories} renderItem={CategoryItem} />
-          <Button>
-            <View width="100%" height={56} justifyContent="center" alignItems="center">
-              <Text fontSize={16}>관심사 등록하기</Text>
+        <View flex={1}>
+          <View height={160} paddingHorizontal={20} justifyContent="flex-end">
+            <Text fontSize={28} fontFamily="bold" lineHeight={40}>
+              관심사를{'\n'}선택해주세요.
+            </Text>
+          </View>
+          <View
+            width="100%"
+            height={40}
+            marginTop={40}
+            paddingHorizontal={20}
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="space-between"
+            gap={12}
+          >
+            <TouchableOpacity>
+              <View flexDirection="row" alignItems="center" gap={12}>
+                <Text fontSize={16}>조회순</Text>
+                <Image src="back" width={20} height={20} transform={[{ rotate: '270deg' }]} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <View flexDirection="row" alignItems="center" gap={12}>
+                <Image src="addBlack" width={28} height={28} />
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View flex={1}>
+            <View zIndex={1} flex={1}>
+              <FlatList
+                data={categories}
+                renderItem={CategoryItem}
+                contentContainerStyle={{ margin: 20 }}
+                ItemSeparatorComponent={() => <View marginVertical={6} />}
+              />
             </View>
-          </Button>
+          </View>
         </View>
       </SafeAreaView>
     </>

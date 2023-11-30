@@ -10,22 +10,15 @@ const LoginPage = () => {
   return (
     <>
       <View width="100%" flex={1} justifyContent="space-between" alignItems="flex-start">
-        <View zIndex={1} paddingHorizontal={28} marginTop={insets.top + 40}>
+        <View zIndex={1} paddingHorizontal={16} marginTop={insets.top + 40}>
           <Button onPress={() => router.replace('/(tabs)/main')}>
-            <View
-              backgroundColor="rgba(255, 255, 255, 0.9)"
-              borderRadius={22}
-              width={44}
-              height={44}
-              alignItems="center"
-              justifyContent="center"
-            >
+            <View width={44} height={44} alignItems="center" justifyContent="center">
               <Image src="back" width={20} height={20} marginLeft={4} />
             </View>
           </Button>
         </View>
         <View zIndex={1} width="100%">
-          <View paddingVertical={40} width="100%" paddingHorizontal={28}>
+          <View paddingVertical={80} width="100%" paddingHorizontal={28}>
             <Text fontSize={48} fontFamily="bold">
               Newspeed
             </Text>
