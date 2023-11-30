@@ -1,31 +1,46 @@
 import { Image, Text, View } from '@/components/atoms';
 import CategoryItem from '@/components/organisms/CategoryItem';
 import { color } from '@/constants';
+import { useModal } from '@/hook/useModal';
 import { FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 
+const categories = [
+  {
+    id: 1,
+    category: '별',
+  },
+  {
+    id: 2,
+    category: '구구루루',
+  },
+  {
+    id: 3,
+    category: '박효신',
+  },
+  {
+    id: 4,
+    category: '플랫타업비트',
+  },
+  {
+    id: 5,
+    category: '쿠쿠다스',
+  },
+];
+
 const MainPage = () => {
-  const categories = [
-    {
-      id: 1,
-      category: '별',
-    },
-    {
-      id: 2,
-      category: '구구루루',
-    },
-    {
-      id: 3,
-      category: '박효신',
-    },
-    {
-      id: 4,
-      category: '플랫타업비트',
-    },
-    {
-      id: 5,
-      category: '쿠쿠다스',
-    },
-  ];
+  const { onModal } = useModal();
+
+  const openFilter = () => {
+    onModal({
+      type: 'platformModal',
+    });
+  };
+
+  const openReigsterCategory = () => {
+    onModal({
+      type: 'platformModal',
+    });
+  };
 
   return (
     <>
@@ -46,13 +61,13 @@ const MainPage = () => {
             justifyContent="space-between"
             gap={12}
           >
-            <TouchableOpacity>
+            <TouchableOpacity onPress={openFilter}>
               <View flexDirection="row" alignItems="center" gap={12}>
-                <Text fontSize={16}>조회순</Text>
+                <Text fontSize={16}>확인순</Text>
                 <Image src="back" width={20} height={20} transform={[{ rotate: '270deg' }]} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={openReigsterCategory}>
               <View flexDirection="row" alignItems="center" gap={12}>
                 <Image src="addBlack" width={28} height={28} />
               </View>
