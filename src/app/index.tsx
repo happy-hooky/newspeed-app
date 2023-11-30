@@ -1,9 +1,11 @@
 import useFontsLoad from '@/hook/useFontsLoad';
+import { useFonts } from 'expo-font';
 import { Redirect } from 'expo-router';
 
 export default () => {
-  const isFontLoaded = useFontsLoad();
+  const { staticFontLoaded, staticFonts } = useFontsLoad();
+  const [isFontLoaded] = useFonts(staticFonts);
 
-  if (!isFontLoaded) return null;
-  if (isFontLoaded) return <Redirect href={'/(tabs)/main'} />;
+  if (!staticFontLoaded || !isFontLoaded) return null;
+  if (staticFontLoaded && isFontLoaded) return <Redirect href={'/(tabs)/main'} />;
 };
