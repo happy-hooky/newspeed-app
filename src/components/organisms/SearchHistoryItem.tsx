@@ -1,4 +1,5 @@
 import { Image, Text, View } from '@/components/atoms';
+import { color } from '@/constants';
 import { Link } from 'expo-router';
 import { useState } from 'react';
 
@@ -22,11 +23,15 @@ const SearchHistoryItem = ({ id, text }: SearchHistoryItemProps) => {
       >
         <View width="100%" flexDirection="row" alignItems="center" justifyContent="space-between">
           <View flexDirection="row" alignItems="center" justifyContent="center">
-            <Text marginRight={8}>•</Text>
-            <Text fontSize={16}>구루루</Text>
+            <Text marginRight={8} color={color.twilight}>
+              •
+            </Text>
+            <Text fontSize={16} color={color.twilight}>
+              구루루
+            </Text>
           </View>
           <View flexDirection="row" alignItems="center">
-            <Text>09.21</Text>
+            <Text color={color.twilight}>09.21</Text>
             <View width={44} height={44} alignItems="flex-end" justifyContent="center">
               <Image src="delete" width={20} height={20} />
             </View>

@@ -16,13 +16,13 @@ const history = [
 
 const SearchPage = () => {
   return (
-    <SafeAreaView style={{ backgroundColor: color.white }}>
-      <View width="100%" height="100%" backgroundColor={color.white}>
+    <SafeAreaView style={{ backgroundColor: color.black }}>
+      <View width="100%" height="100%">
         <View height={120} justifyContent="center" paddingHorizontal={20}>
           <TextInput design="search" />
         </View>
         <View paddingHorizontal={20}>
-          <Text fontSize={18} fontFamily="bold">
+          <Text fontSize={18} fontFamily="bold" color={color.twilight}>
             검색 기록
           </Text>
         </View>

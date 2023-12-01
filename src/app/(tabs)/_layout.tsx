@@ -10,10 +10,10 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: true,
         headerShadowVisible: false,
-        tabBarStyle: { height: insets.bottom + 60 },
+        tabBarStyle: { height: insets.bottom + 60, backgroundColor: color.midNight },
         tabBarInactiveTintColor: color.gray,
-        tabBarActiveTintColor: color.black,
-        tabBarLabelStyle: { fontSize: 14, fontFamily: 'regular' },
+        tabBarActiveTintColor: color.white,
+        tabBarLabelStyle: { fontSize: 14, fontFamily: 'medium' },
       }}
     >
       <Tabs.Screen
@@ -21,7 +21,7 @@ export default function TabsLayout() {
         options={{
           tabBarLabel: '홈',
           headerTitle: '',
-          tabBarIcon: () => <Image src="category" width={30} height={30} />,
+          tabBarIcon: () => <Image src="category" width={24} height={24} />,
         }}
       />
       <Tabs.Screen
@@ -29,7 +29,7 @@ export default function TabsLayout() {
         options={{
           tabBarLabel: '검색',
           headerTitle: '검색하기',
-          tabBarIcon: () => <Image src="tabSearch" width={32} height={28} />,
+          tabBarIcon: () => <Image src="searchTab" width={24} height={30} />,
         }}
       />
       <Tabs.Screen
@@ -37,7 +37,7 @@ export default function TabsLayout() {
         options={{
           tabBarLabel: 'MY',
           headerTitle: '문의하기',
-          tabBarIcon: () => <Image src="user" width={30} height={30} />,
+          tabBarIcon: () => <Image src="user" width={24} height={24} />,
         }}
       />
     </Tabs>

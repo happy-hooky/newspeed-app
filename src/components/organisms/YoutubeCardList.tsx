@@ -21,7 +21,6 @@ const YoutubeCardList = () => {
     <FlatList
       contentContainerStyle={{
         paddingHorizontal: 12,
-        backgroundColor: color.white,
       }}
       key={Math.random().toString(36).substring(2, 11) + `${new Date().getTime()}`}
       renderItem={(item) => <YoutubeCard data={item.item} />}

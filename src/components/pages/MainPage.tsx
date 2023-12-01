@@ -44,10 +44,10 @@ const MainPage = () => {
 
   return (
     <>
-      <SafeAreaView style={{ flex: 1, backgroundColor: color.white }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: color.black }}>
         <View flex={1}>
           <View height={108} paddingHorizontal={20} justifyContent="flex-end">
-            <Text fontSize={28} fontFamily="bold" lineHeight={40}>
+            <Text fontSize={28} fontFamily="bold" lineHeight={40} color={color.twilight}>
               관심사를{'\n'}선택해주세요.
             </Text>
           </View>
@@ -63,13 +63,15 @@ const MainPage = () => {
           >
             <TouchableOpacity onPress={openFilter}>
               <View flexDirection="row" alignItems="center" gap={12}>
-                <Text fontSize={16}>확인순</Text>
+                <Text color={color.twilight} fontSize={16}>
+                  확인순
+                </Text>
                 <Image src="back" width={20} height={20} transform={[{ rotate: '270deg' }]} />
               </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={openReigsterCategory}>
               <View flexDirection="row" alignItems="center" gap={12}>
-                <Image src="addBlack" width={28} height={28} />
+                <Image src="add" width={28} height={28} />
               </View>
             </TouchableOpacity>
           </View>

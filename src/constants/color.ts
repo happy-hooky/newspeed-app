@@ -9,4 +9,6 @@ export const color = {
   white: '#FFFFFF',
   gray: '#848484',
   whiteSmoke: '#D5D5D5',
+  indiPink: '#EB8193',
+  midNight: '#333333',
 };

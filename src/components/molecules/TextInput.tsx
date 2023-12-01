@@ -11,9 +11,9 @@ const designType = {
   search: css`
     padding-left: 16px;
     padding-right: 16px;
-    background-color: ${color.twilight};
+    background-color: ${color.whiteSmoke};
     width: 100%;
-    height: 56px;
+    height: 44px;
     border-radius: 4px;
     font-size: 14px;
   `,
