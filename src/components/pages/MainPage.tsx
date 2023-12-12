@@ -81,7 +81,7 @@ const MainPage = () => {
                 data={categories}
                 renderItem={CategoryItem}
                 contentContainerStyle={{ margin: 20 }}
-                ItemSeparatorComponent={() => <View marginVertical={6} />}
+                ItemSeparatorComponent={() => <View marginVertical={8} />}
               />
             </View>
           </View>
